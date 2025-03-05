@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>dominio</artifactId>
-    <packing>jar</packing>
+    <packaging>jar</packaging>
 
     <dependencies>
         <!-- Jakarta Persistence (JPA) -->
@@ -25,9 +25,5 @@
             <version>6.3.1.Final</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
     </dependencies>
 </project>
