@@ -6,7 +6,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>infraestructura</artifactId>
+    <artifactId>presentacion</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -15,16 +15,17 @@
             <artifactId>dominio</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>monedas</groupId>
+            <artifactId>aplicacion</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.3.0</version>
+        </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>

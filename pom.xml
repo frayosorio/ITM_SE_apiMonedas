@@ -31,6 +31,9 @@
 	<modules>
 		<module>dominio</module>
 		<module>infraestructura</module>
+		<module>core</module>
+		<module>aplicacion</module>
+		<module>presentacion</module>
 	</modules>
 
 	<properties>

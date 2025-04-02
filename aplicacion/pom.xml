@@ -6,7 +6,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>infraestructura</artifactId>
+    <artifactId>aplicacion</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -15,7 +15,18 @@
             <artifactId>dominio</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>monedas</groupId>
+            <artifactId>infraestructura</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>monedas</groupId>
+            <artifactId>core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
