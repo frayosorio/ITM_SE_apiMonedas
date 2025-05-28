@@ -1,0 +1,44 @@
+pipeline{
+    agent any
+
+    environment {
+        DOCKER_IMAGE = 'apimonedasitm'
+        CONTAINER_NAME = 'dockerapimonedasitm'
+        DOCKER_NETWORK = 'dockerdivisionpoliticaitm_red'
+        DOCKER_BUILD_DIR = 'presentacion'
+        HOST_PORT = '9085'
+        CONTAINER_PORT = '8080'
+    }
+
+    stages{
+        stage('Generar ejecutable Maven'){
+            steps {
+                bat 'mvn clean package -DskipTests'
+            }
+        }
+
+        stage('Construir la imagen'){
+            steps{
+                dir("${DOCKER_BUILD_DIR}") {
+                    bat "docker build -t ${DOCKER_IMAGE} ."
+                }
+            }
+        }
+/*
+        stage(''){
+            steps{
+                
+            }
+        }
+*/
+        stage('Desplegar el contenedor'){
+            steps{
+                script {
+                    bat "docker container run --network ${DOCKER_NETWORK} --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} -d ${DOCKER_IMAGE}"
+                }
+            }
+        }
+
+    }
+
+}
